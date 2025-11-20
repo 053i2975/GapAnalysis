@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gap Analysis | AI性格診断</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">Kaogotari</h1>
+            <button class="menu-toggle" aria-label="メニュー">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="screen-landing" class="screen active">
+            <header class="landing-header">
+                <span class="tag">AI TECHNOLOGY</span>
+                <h1>第一印象と中身の<br>ギャップ解析</h1>
+                <p class="lead-text">
+                    あなたの顔写真と深層心理データから、<br>
+                    「周囲に見せている顔」と「本来の自分」の乖離度を可視化します。
+                </p>
+            </header>
+
+            <div class="start-button-area">
+                <button class="btn-start" onclick="goToInput()">診断を開始！</button>
+            </div>
+
+            <div class="content-card">
+                <h2>診断の仕組み</h2>
+                <p class="description">
+                    本サービスは、最新のAI画像解析技術（デモ）と心理学に基づいたアンケートを組み合わせています。
+                    具体的には、以下の2つの要素を統合的に分析します。
+                </p>
+
+                <div class="feature-box">
+                    <h3>01. 表情解析（AI画像認識技術）</h3>
+                    <p>アップロードされた写真から、微細な表情筋の動きや雰囲気を読み取り、他者に与える「第一印象」を数値化します。このデータから「元気度」や「ストレス度」を算出することで、あなたの心身の状態を客観的に可視化します。
+                    </p>
+                    <p class="tech-detail">
+                        本サービスでは、AIの画像解析技術とスマートフォンのカメラを組み合わせることで、瞬間では捉えきれないこの微細な血流の変化を捉えます。このデータから「完璧度」や「ストレス度」を算出することで、あなたの心身の状態を客観的に可視化します。
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>02. 深層心理スキャン（心理学的アプローチ）</h3>
+                    <p>独自のアルゴリズムに基づいた質問への回答から、あなた自身も気づいていない「潜在的な性格」を特定します。</p>
+                    <p class="tech-detail">
+                        20種類の質問プールから毎回ランダムに8問を選出し、回答パターンを多角的に分析。ビッグファイブ理論やMBTI理論を応用した独自の評価軸により、表層的な自己認識を超えた深層心理を解明します。
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>このような方におすすめ</h2>
+                <div class="use-case-grid">
+                    <div class="use-case-item">
+                        <div class="use-case-label">Business</div>
+                        <h4>ビジネスシーンで活用</h4>
+                        <p>面接や商談前に、自分の第一印象を客観的に把握したい方</p>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-label">Relationship</div>
+                        <h4>人間関係の改善</h4>
+                        <p>周囲からどう見られているか気になる、誤解されやすいと感じる方</p>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-label">Self-Discovery</div>
+                        <h4>自己理解を深める</h4>
+                        <p>本当の自分を知り、強みや個性を活かしたい方</p>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-label">Communication</div>
+                        <h4>コミュニケーション向上</h4>
+                        <p>ギャップを理解して、より効果的な自己表現を目指す方</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>診断結果でわかること</h2>
+                <ul class="result-features">
+                    <li><strong>第一印象スコア:</strong> 他者があなたに抱く最初の印象（知的、温和、リーダー、クールなど）</li>
+                    <li><strong>内面性格スコア:</strong> あなたの本質的な性格傾向（野心家、繊細、論理的、自由人など）</li>
+                    <li><strong>ギャップ度:</strong> 第一印象と内面の乖離度をパーセンテージで表示</li>
+                    <li><strong>相性分析:</strong> あなたと相性の良いタイプを第一印象・内面の両面から診断</li>
+                    <li><strong>AIアドバイス:</strong> ギャップを活かすための具体的なアドバイスを提供</li>
+                </ul>
+            </div>
+
+            <div class="content-card privacy-note">
+                <h2>プライバシーについて</h2>
+                <p>アップロードされた写真は診断にのみ使用され、サーバーには保存されません。また、診断結果は個人を特定できない形で統計データとして活用される場合がありますが、個人情報が第三者に提供されることはありません。
+                </p>
+            </div>
+        </section>
+
+
+        <section id="screen-input" class="screen hidden">
+            <div class="form-card">
+                <h2>あなたの情報を入力</h2>
+                <p class="sub-text">正確な診断のため、全ての項目を入力してください。<br>ニックネームは、あなたが周囲に与える第一印象の参考となりますが、必ずしも実名である必要はございません。</p>
+
+                <div class="input-group">
+                    <label for="nickname">ニックネーム <span class="required">*</span></label>
+                    <input type="text" id="nickname" placeholder="ニックネームを入力">
+                </div>
+
+                <div class="input-group">
+                    <label for="user-photo">顔写真 <span class="required">*</span></label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="user-photo" accept="image/*">
+                    </div>
+                    <p class="note">※顔がはっきり写っている方が、より正確な診断ができます。</p>
+                </div>
+
+                <button class="btn-primary" onclick="validateAndGoToQuiz()">次へ進む</button>
+                <button class="btn-text" onclick="goBack('screen-landing')">戻る</button>
+            </div>
+        </section>
+
+
+        <section id="screen-quiz" class="screen hidden">
+            <div class="form-card">
+                <h2>深層心理アンケート</h2>
+                <p class="sub-text">直感で答えてください。</p>
+
+                <div id="questions-container">
+                </div>
+
+                <button class="btn-primary" onclick="validateAndStartAnalysis()">解析を開始する</button>
+            </div>
+        </section>
+
+
+        <section id="screen-result" class="screen hidden">
+            <div id="loading-view">
+                <div class="loader"></div>
+                <p id="loading-text">データを解析中...</p>
+            </div>
+
+            <div id="result-view" class="hidden">
+                <h2>診断結果レポート</h2>
+                <p class="welcome-msg"><span id="display-name"></span> さんの解析データ</p>
+
+                <div class="result-grid">
+                    <div class="score-card appearance">
+                        <h3>First Impression</h3>
+                        <p class="score-label">第一印象</p>
+                        <p id="result-appearance" class="score-value">--</p>
+                    </div>
+                    <div class="score-card inner">
+                        <h3>Inner Self</h3>
+                        <p class="score-label">内面</p>
+                        <p id="result-inner" class="score-value">--</p>
+                    </div>
+                </div>
+
+                <div class="gap-card">
+                    <h3>GAP LEVEL</h3>
+                    <div class="gap-meter">
+                        <span id="result-gap">0%</span>
+                    </div>
+                    <p class="gap-desc">乖離度</p>
+                </div>
+
+                <div class="compatibility-section">
+                    <h2>相性診断</h2>
+                    <div class="compatibility-grid">
+                        <div class="compatibility-card">
+                            <h3>第一印象での相性</h3>
+                            <p class="compatibility-type" id="compat-appearance">--</p>
+                            <p class="compatibility-desc" id="compat-appearance-desc">--</p>
+                        </div>
+                        <div class="compatibility-card">
+                            <h3>内面での相性</h3>
+                            <p class="compatibility-type" id="compat-inner">--</p>
+                            <p class="compatibility-desc" id="compat-inner-desc">--</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advice-box">
+                    <h3>AI Advice</h3>
+                    <div id="result-advice-container">
+                        <p id="result-advice-main" class="advice-main">--</p>
+                        <div class="advice-points">
+                            <h4>具体的なアドバイス:</h4>
+                            <ul id="result-advice-points">
+                                <li>--</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="location.reload()">トップに戻る</button>
+            </div>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="webhookSender.js"></script>
+</body>
+
+</html>

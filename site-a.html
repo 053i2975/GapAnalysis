@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="画像ファイルを指定したWebhook URLへ簡単に送信するためのユーティリティツールです。匿名でのデータ連携やテストにご利用いただけます。">
+  <title>画像Webhookユーティリティ | カオパシャ</title>
+    <link rel="stylesheet" href="site-a.css">
+</head>
+<body>
+  <div class="bg_pattern"></div>
+  
+  <div class="site-content">
+    <!-- Consent Modal -->
+    <div id="consentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <h2 id="modalTitle" class="modal-title">サービス利用規約への同意</h2>
+        
+        <div class="terms-scroll-area">
+          <p>
+            本サービスをご利用いただくには、事前に
+            <a href="#" class="terms-link" target="_blank">
+              <strong>利用規約（必ずお読みください）</strong>
+            </a>
+            に同意していただく必要があります。
+          </p>
+          <p>※チェックを入れることで、本規約の<strong>全内容に同意</strong>したものとみなされます。</p>
+        </div>
+        
+        <div class="modal-footer">
+          <div class="consent-checkbox-group">
+            <input type="checkbox" id="modalConsentCheckbox" name="consent">
+            <label for="modalConsentCheckbox">利用規約を読み、内容に同意します。</label>
+          </div>
+          
+          <button id="modalAgreeBtn" class="primary-btn" disabled>
+            同意してサービスを利用する
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-container">
+      <article class="input-card">
+        <header class="card-header">
+          <h1>カオパシャ (画像送信ユーティリティ)</h1>
+          <p class="catch-copy">画像ファイルを指定のWebhook URLに送信するための専用URLを生成します。</p>
+        </header>
+
+        <section class="how-to-use-section">
+          <h2>使い方ガイド</h2>
+          <ol class="guide-steps">
+            <li>まず、<a href="https://webhook.site/" target="_blank"><strong>Webhook.site</strong></a>などのサービスで、結果を受け取りたい 「<strong>Webhook URL</strong>」 を取得しコピーしてください。</li>
+            <li>結果を受け取りたい <strong>Webhook URL</strong> の入力欄に、コピーしたURLを貼り付けてください。</li>
+            <li>「<strong>URLを生成する</strong>」ボタンを押すと、画像アップロード用の**専用URL**が作成されます。</li>
+            <li>生成されたURLにアクセスしたユーザーが画像をアップロードすると、その写真が <strong>Webhook URL</strong> へ送信されます。</li>
+            <li>送信されたデータを確認するには、<strong>Webhook URL</strong> サービス（例: Webhook.site）の受信履歴を確認してください。</li>
+          </ol>
+          <p class="note-text">
+            ※本ガイドでは <strong>Webhook.site</strong> を使った方法を説明していますが、<strong>Discord</strong> や <strong>Slack</strong> など、POSTリクエストを受け付けられる他サービスの Webhook URLでも同様に利用できます。
+          </p>
+        </section>
+
+        <section class="disclaimer-section">
+          <h2>利用上の注意点</h2>
+          <p class="description-text">
+            本サービスをご利用になる前に、以下の点を必ずご確認ください。
+          </p>
+          <p class="description-text">
+            このサービスは、画像をWebhookへ送信する**技術検証・エンターテイメント目的のツール**です。
+            当ウェブサイトにアップロードされた画像は、指定された Webhook URL にそのまま送信されます。
+            <strong>個人情報保護、著作権、プライバシー権を侵害する行為や、反社会的行為・迷惑行為を目的とした利用は固く禁じます。</strong>
+          </p>
+          <div class="info-box">
+            <p><strong>重要:</strong> Webhookに送信された**情報の内容・管理・利用**は、URLを作成し送信先を指定したユーザー自身が**全て責任を負います**。</p>
+            <p>本サービスの利用によって生じた、いかなる損害についても、開発者は一切の責任を負いません。</p>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <div class="form-group">
+            <input id="webhookInput" type="url" placeholder="送信先Webhook URLを入力" required>
+            <button id="generateBtn" class="primary-btn">URLを生成する</button>
+          </div>
+          <div id="generated"></div>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Sorena All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="site-a.js"></script>
+  <script src="webhookSender.js"></script>
+</body>
+</html>
